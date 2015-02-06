@@ -1,5 +1,5 @@
 #header {
-  background-color: 7C0202;
+  background-color: #7C0202;
   color: white;
   text-align: center;
   padding: 5px;
@@ -7,6 +7,9 @@
 }
 
 
+input {
+  color: black;
+}
 
 #feed {
     line-height:30px;

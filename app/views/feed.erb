@@ -1,5 +1,5 @@
 <div id="header">
-<h1>Holler Back, Young'n!</h1>
+<h1>Holler Back, Y'all!</h1>
 <p><a href='/log_out'>Log Out</a></p>
 </div>
 
@@ -9,6 +9,15 @@
 <%=@user.tweets.count%>TWEET COUNT<br>
 FOLLOWING COUNT<br>
 FOLLOWERS COUNT<br>
+=======
+<h1>Welcome <%=@user.full_name%> </h1>
+</div>
+
+<div id="nav">
+<%=@user.full_name%><br>
+<%=@user.user_handle%><br>
+<%=@user.hollers.count%><br>
+FOLLOWER/FOLLOWING counts <br>
 </div>
 
 <div id="feed">

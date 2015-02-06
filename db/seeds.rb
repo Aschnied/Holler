@@ -1,7 +1,14 @@
+require 'faker'
+require 'securerandom'
+
 10.times do
-  User.new(user_name: Faker::Internet.user_name, full_name: Faker::Name.name, email: Faker::Internet.safe_email)
+  User.create(user_handle: Faker::Internet.user_name, full_name: Faker::Name.name, email: Faker::Internet.safe_email, password: SecureRandom.hex(4))
 end
 
 40.times do
-  Tweet.new(content: Faker::Hacker.say_something_smart[0..19], user_id: rand(1..9))
+  Holler.create(content: Faker::Lorem.sentence[0..19], user_id: rand(1..9))
+end
+
+10.times do
+  Follow.create( follower_id: rand(1..10), followed_id: rand(1..10))
 end
