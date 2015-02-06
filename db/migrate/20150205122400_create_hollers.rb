@@ -3,8 +3,7 @@ class CreateHollers < ActiveRecord::Migration
     create_table :hollers do |t|
       t.string :content
       t.integer :user_id
-      t.string  :orig_author
-
+      t.string  :original_author
       t.timestamps
     end
   end
