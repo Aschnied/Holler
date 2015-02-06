@@ -1,22 +1,46 @@
 <div id="feed_header">
-
-
-
 <div id="header">
 <h1>Holler Back, Y'all!</h1>
+<h2>Welcome, <%=@user.full_name%>! </h2>
+
 <p><a href='/log_out'>Log Out</a></p>
 </div>
+<!--
+<style>
+   #nav {
+      margin-left:4%;
+      margin-top: 3%;
+      width: 30%;
+      float: left;
+      height: 1000px;
+      color: white;
+    }
+    #feed {
+      margin-top: 4%;
+      width: 60%;
+      margin-left: -50px;
+    }
 
-<div id="nav"><p>
-<%=@user.full_name%><br/>
-<%=@user.user_handle%><br>
-<%=@user.hollers.count%>TWEET COUNT<br>
-FOLLOWING COUNT<br>
-FOLLOWERS COUNT<br>
+    body {
+      background:black;
+    }
 
-<h1>Welcome <%=@user.full_name%> </h1>
-<nav>
-</div>
+    h1 {
+      color: white;
+    }
+
+    h2 {
+      color: black;
+    }
+    a {
+      color:white;
+    }
+    #footer {
+      padding: 5%;
+    }
+</style>
+-->
+
 
 <div id="nav">
   <p><a href="/user/<%=@user.id%>">Full name: <%=@user.full_name%></a><br>
@@ -26,31 +50,48 @@ FOLLOWERS COUNT<br>
   <p>Following: <%=@user.follows.where( followed_id: @user.id).count%></p><br>
 </div>
 
+<nav>
+</div>
+
+
+
 <div id="feed">
-  <div id="holler">
-<table id ="holler_table">
-    <%@hollers.each do |holler|%>
-  <tr>
-    <td><%=holler.user.user_handle%></td>
+  <!-- <div id="holler"> -->
+
+
+
+<!-- <table id ="holler_table">
+  <tr class="vert_border">
     <td></td>
-    <td><%=holler.created_at@%></td>
+    <td></td>
+    <td></td>
   </tr>
-  <tr style="text-align: center">
-    <td><%=holler.created_at@%>
+  <tr class="vert_border">
+    <td id="holler_content">
 </td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td><form action="/reholler" method="post">
-    <input type="reholler" value="Reholler"/></td>
+    <td class="bottom"></td>
+    <td class="bottom"></td>
+    <td class="bottom"><form action="/reholler" method="post">
+    <input type="submit" value="Reholler"/></td>
   </tr>
+ -->
+    <%@hollers.each do |holler|%>
+  <ul class="holler_content">
+    <li class="handle"><a href=""><%=holler.user.user_handle%></a></li>
+    <li class="time"><%=holler.created_at.strftime("%B %d, %Y, %l:%M")%></li>
+    <li class="content"><br/><%=holler.content%></li>
+    <li class="reholler">Reholler button</li><br>
+  </ul>
+<%end%>
+
 </table>
 </div>
 </div>
-
+<!--
 <div id="footer">
 Copyright © Aunt Sharlene's Squirrel Bucket, LLC.
-</div>
+</div> -->
 
 
