@@ -1,5 +1,14 @@
 <div id="header">
-<h1>It's Holler Ya'll!</h1>
+<h1>Holler Back, Y'all!</h1>
+<p><a href='/log_out'>Log Out</a></p>
+</div>
+
+<div id="nav"><p>
+<%=@user.name%><br/>
+<%=@user.user_handle%><br>
+<%=@user.tweets.count%>TWEET COUNT<br>
+FOLLOWING COUNT<br>
+FOLLOWERS COUNT<br>
 
 <h1>Welcome <%=@user.full_name%> </h1>
 </div>
