@@ -23,5 +23,5 @@ helpers do
 
   def session_authenticate email, password
     candidate = User.find_by(:email => email)
-
   end
+end
