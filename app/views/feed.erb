@@ -1,11 +1,14 @@
 <div id="header">
 <h1>Holler Back, Young'n!</h1>
+<p><a href='/log_out'>Log Out</a></p>
 </div>
 
-<div id="nav">
-USER_NAME<br>
-TWEET COUNT<br>
-FOLLOWER/FOLLOWING<br>
+<div id="nav"><p>
+<%=@user.name%><br/>
+<%=@user.user_handle%><br>
+<%=@user.tweets.count%>TWEET COUNT<br>
+FOLLOWING COUNT<br>
+FOLLOWERS COUNT<br>
 </div>
 
 <div id="feed">
