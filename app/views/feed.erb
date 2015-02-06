@@ -43,8 +43,8 @@
 
 
 <div id="nav">
-  <p><a href="/user/<%=@user.id%>">Full name: <%=@user.full_name%></a><br>
-  <p>User Handle: <%=@user.user_handle%></p><br>
+  <p><a href="/user/<%=@user.id%>"><%=@user.full_name%></a><br>
+  <p><%=@user.user_handle%></p><br>
 
   <p>Followers: <%=@user.follows.where( follower_id: @user.id).count%></p><br>
   <p>Following: <%=@user.follows.where( followed_id: @user.id).count%></p><br>
@@ -59,30 +59,12 @@
   <!-- <div id="holler"> -->
 
 
-
-<!-- <table id ="holler_table">
-  <tr class="vert_border">
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr class="vert_border">
-    <td id="holler_content">
-</td>
-  </tr>
-  <tr>
-    <td class="bottom"></td>
-    <td class="bottom"></td>
-    <td class="bottom"><form action="/reholler" method="post">
-    <input type="submit" value="Reholler"/></td>
-  </tr>
- -->
     <%@hollers.each do |holler|%>
   <ul class="holler_content">
     <li class="handle"><a href=""><%=holler.user.user_handle%></a></li>
     <li class="time"><%=holler.created_at.strftime("%B %d, %Y, %l:%M")%></li>
     <li class="content"><br/><%=holler.content%></li>
-    <li class="reholler">Reholler button</li><br>
+    <li class="reholler">Reholler</li><br>
   </ul>
 <%end%>
 

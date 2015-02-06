@@ -23,6 +23,10 @@ post '/signin' do
   redirect '/feed'
 end
 
+get '/log_out' do
+  redirect '/'
+end
+
 get '/feed' do
   @user = User.find(session[:id])
   @hollers = Holler.all
