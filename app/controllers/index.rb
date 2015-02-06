@@ -4,6 +4,11 @@ end
 
 post '/signup' do
   @user = User.create(params[:user])
+  if @user.save
+    session[:id] = @user.id
+  else
+    redirect '/'
+  end
   redirect '/feed'
 end
 
