@@ -33,7 +33,10 @@ get '/feed' do
   erb :feed
 end
 
-
+post '/holler' do
+  @holler = Holler.create( content: params[:tweet], user_id: session[:id])
+  redirect '/feed'
+end
 
 get '/user/:id' do
   @user = User.find(params[:id])

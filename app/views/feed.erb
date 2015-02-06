@@ -58,8 +58,7 @@
 <div id="feed">
   <!-- <div id="holler"> -->
 
-
-    <%@hollers.each do |holler|%>
+    <%@hollers.reverse_each do |holler|%>
   <ul class="holler_content">
     <li class="handle"><a href=""><%=holler.user.user_handle%></a></li>
     <li class="time"><%=holler.created_at.strftime("%B %d, %Y, %l:%M")%></li>
@@ -67,9 +66,12 @@
     <li class="reholler">Reholler</li><br>
   </ul>
 <%end%>
-
-</table>
 </div>
+
+<form action="/holler" method="post">
+    <textarea class="textarea" name="tweet" placeholder="Add tweet message here"></textarea>
+    <input class = "submit holer" type="submit" value="Holler">
+</form>
 </div>
 <!--
 <div id="footer">

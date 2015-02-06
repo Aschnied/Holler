@@ -59,7 +59,15 @@ input {
   opacity: 0.4;
 }
 
-#holler {
+.textarea {
+  margin:20px;
+  height: 250px;
+  width: 370px;
+}
+
+.holer {
+  float: right;
+  margin-right: 50px;
 }
 
 #holler_table td {
