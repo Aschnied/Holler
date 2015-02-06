@@ -34,6 +34,17 @@
 </style>
 
 <div id="header">
+<h1>Holler Back, Y'all!</h1>
+<p><a href='/log_out'>Log Out</a></p>
+</div>
+
+<div id="nav"><p>
+<%=@user.name%><br/>
+<%=@user.user_handle%><br>
+<%=@user.tweets.count%>TWEET COUNT<br>
+FOLLOWING COUNT<br>
+FOLLOWERS COUNT<br>
+
 <h1>Welcome <%=@user.full_name%> </h1>
 <nav>
 </div>
@@ -46,10 +57,13 @@
 <p>Following: <%=@user.follows.where( followed_id: @user.id).count%></p><br>
 </div>
 
+<<<<<<< HEAD
 <div id="feed">
 <h2>Hollers From Your Herd and Kin!</h2>
 <section>
   <p><%@user.each {}
+=======
+>>>>>>> a5cfdc216bcb03abd3f34e9d73d7e216f97f9f68
 
 </div>
 
