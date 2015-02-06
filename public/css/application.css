@@ -1,9 +1,19 @@
 #feed_header {
   background-color: #7C0202;
+
+  background-image: url("http://www.perceptivetravel.com/issues/0313/photos/moonshine-cabin-500.jpg");
+  height: 100%;
+}
+
+#header {
+  /*background-color: #7C0202;*/
   color: white;
   text-align: center;
+  font-size: 20px;
+  font-family: ;
   padding: 5px;
   width: 97%;
+  height: 100%;
 }
 
 
@@ -46,3 +56,39 @@ input {
     padding:5px;
     width: 97%;
 }
+
+
+/* CSS FROM FEED.ERB PAGE
+<style>
+   #nav {
+      margin-left:4%;
+      margin-top: 3%;
+      width: 30%;
+      float: left;
+      height: 1000px;
+      color: white;
+    }
+    #feed {
+      margin-top: 4%;
+      width: 60%;
+      margin-left: -50px;
+    }
+
+    body {
+      background:black;
+    }
+
+    h1 {
+      color: white;
+    }
+
+    h2 {
+      color: black;
+    }
+    a {
+      color:white;
+    }
+    #footer {
+      padding: 5%;
+    }
+</style> */

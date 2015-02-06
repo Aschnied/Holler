@@ -1,23 +1,29 @@
 <div id="feed_header">
+
+
+
+<div id="header">
 <h1>Holler Back, Y'all!</h1>
 <p><a href='/log_out'>Log Out</a></p>
 </div>
 
 <div id="nav"><p>
-<%=@user.name%><br/>
+<%=@user.full_name%><br/>
 <%=@user.user_handle%><br>
-<%=@user.tweets.count%>TWEET COUNT<br>
+<%=@user.hollers.count%>TWEET COUNT<br>
 FOLLOWING COUNT<br>
 FOLLOWERS COUNT<br>
 
 <h1>Welcome <%=@user.full_name%> </h1>
+<nav>
 </div>
 
 <div id="nav">
-  <%=@user.full_name%><br>
-  <%=@user.user_handle%><br>
-  <%=@user.hollers.count%><br>
-  FOLLOWER/FOLLOWING counts <br>
+  <p><a href="/user/<%=@user.id%>">Full name: <%=@user.full_name%></a><br>
+  <p>User Handle: <%=@user.user_handle%></p><br>
+
+  <p>Followers: <%=@user.follows.where( follower_id: @user.id).count%></p><br>
+  <p>Following: <%=@user.follows.where( followed_id: @user.id).count%></p><br>
 </div>
 
 <div id="feed">
@@ -32,7 +38,6 @@ FOLLOWERS COUNT<br>
   <tr style="text-align: center">
     <td><%=holler.created_at@%>
 </td>
-
   </tr>
   <tr>
     <td></td>
@@ -47,3 +52,5 @@ FOLLOWERS COUNT<br>
 <div id="footer">
 Copyright © Aunt Sharlene's Squirrel Bucket, LLC.
 </div>
+
+
