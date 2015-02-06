@@ -20,11 +20,17 @@ end
 
 get '/feed' do
   @user = User.find(session[:id])
+  @hollers = Holler.all
   erb :feed
 end
 
+
+
 get '/user/:id' do
   @user = User.find(params[:id])
+  @
   erb :user_page
 end
+
+
 

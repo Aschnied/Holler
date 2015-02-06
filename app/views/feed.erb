@@ -1,4 +1,4 @@
-<div id="header">
+<div id="feed_header">
 <h1>Holler Back, Y'all!</h1>
 <p><a href='/log_out'>Log Out</a></p>
 </div>
@@ -14,13 +14,34 @@ FOLLOWERS COUNT<br>
 </div>
 
 <div id="nav">
-<%=@user.full_name%><br>
-<%=@user.user_handle%><br>
-<%=@user.hollers.count%><br>
-FOLLOWER/FOLLOWING counts <br>
+  <%=@user.full_name%><br>
+  <%=@user.user_handle%><br>
+  <%=@user.hollers.count%><br>
+  FOLLOWER/FOLLOWING counts <br>
 </div>
 
+<div id="feed">
+  <div id="holler">
+<table id ="holler_table">
+    <%@hollers.each do |holler|%>
+  <tr>
+    <td><%=holler.user.user_handle%></td>
+    <td></td>
+    <td><%=holler.created_at@%></td>
+  </tr>
+  <tr style="text-align: center">
+    <td><%=holler.created_at@%>
+</td>
 
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td><form action="/reholler" method="post">
+    <input type="reholler" value="Reholler"/></td>
+  </tr>
+</table>
+</div>
 </div>
 
 <div id="footer">
