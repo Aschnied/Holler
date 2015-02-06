@@ -1,3 +1,26 @@
+/* Index page CSS */
+
+p {
+  color: #375d81;
+  /*color: #4bb5c1;*/
+}
+
+.index {
+  color: #375d81;
+  /*color: #4bb5c1;*/
+}
+h1 {
+  color: black;
+}
+
+.submit {
+  color: #375d81;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+/* Feed page CSS */
+
 #feed_header {
   background-color: #7C0202;
   background-image: url("http://www.perceptivetravel.com/issues/0313/photos/moonshine-cabin-500.jpg");
@@ -86,4 +109,11 @@ input {
   padding-right: 10px;
 }
 
-
+.reholler {
+  border: 1px solid black;
+  color: white;
+  background: black;
+  padding: 2px;
+  border-radius: 10px;
+  cursor: pointer;
+}
