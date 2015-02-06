@@ -8,3 +8,7 @@ end
 40.times do
   Holler.create(content: Faker::Lorem.sentence[0..19], user_id: rand(1..9))
 end
+
+10.times do
+  Follow.create( follower_id: rand(1..10), followed_id: rand(1..10))
+end

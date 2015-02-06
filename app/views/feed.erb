@@ -1,15 +1,16 @@
 <div id="header">
 <h1>It's Holler Ya'll!</h1>
+
+<h1>Welcome <%=@user.full_name%> </h1>
 </div>
 
 <div id="nav">
-USER_NAME<br>
-TWEET COUNT<br>
-FOLLOWER/FOLLOWING<br>
+<%=@user.full_name%><br>
+<%=@user.user_handle%><br>
+<%=@user.hollers.count%><br>
+FOLLOWER/FOLLOWING counts <br>
 </div>
 
-<div id="feed">
-<h1>Hollers From Your Herd and Kin!</h1>
 
 </div>
 
