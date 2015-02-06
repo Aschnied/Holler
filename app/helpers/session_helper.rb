@@ -23,5 +23,44 @@ helpers do
 
   def session_authenticate email, password
     candidate = User.find_by(:email => email)
+<<<<<<< HEAD
+    unless candidate.blank?
+
+      if candidate.password.blank?
+        session_set_current_user candidate if candidate.read_attribute(:password) == password
+      else
+        session_set_current_user candidate if candidate.password == password
+      end
+    else
+      false
+    end
   end
-end
+
+  def session_logout
+    session.delete :current_user_id
+    @session_current_user = nil
+  end
+
+  def session_authenticate!
+    return if session_logged_in?
+    session[:redirect_target] = request.fullpath if request.get?
+    redirect '/session/new'
+  end
+
+  def session_redirect_target
+    begin
+      if session_current_user
+        if session[:redirect_target].blank?
+          '/secrets'
+        else
+          session[:redirect_target]
+        end
+      else
+        '/'
+      end
+    ensure
+      session.delete :redirect_target
+      end
+    end
+  end
+
