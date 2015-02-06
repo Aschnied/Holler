@@ -7,10 +7,15 @@ helpers do
     session[:current_user_id]
   end
 
-  def session_set_current_user
+  def session_set_current_user user
+    session[:current_user_id] = user.id
+    @current_user = user
+  end
+
+  def session_current_user
     return nil if session_current_user_id.blank?
     begin
-      @current ||= User.find(session_current_user_id)
+      @current_user ||= User.find(session_current_user_id)
     rescue
       session_logout
     end
@@ -23,12 +28,13 @@ helpers do
 
   def session_authenticate email, password
     candidate = User.find_by(:email => email)
-<<<<<<< HEAD
     unless candidate.blank?
 
-      if candidate.password.blank?
+      if candidate.password_hash.blank?
+        # Use Unsafe Old Password
         session_set_current_user candidate if candidate.read_attribute(:password) == password
       else
+        # Use BCrypt Override
         session_set_current_user candidate if candidate.password == password
       end
     else
@@ -47,6 +53,7 @@ helpers do
     redirect '/session/new'
   end
 
+
   def session_redirect_target
     begin
       if session_current_user
@@ -60,7 +67,6 @@ helpers do
       end
     ensure
       session.delete :redirect_target
-      end
     end
   end
-
+end

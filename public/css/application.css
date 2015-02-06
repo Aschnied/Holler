@@ -1,9 +1,17 @@
+#home_paper {
+  background-image: url("http://www.perceptivetravel.com/issues/0313/photos/moonshine-cabin-500.jpg");
+  height: 100%;
+}
+
 #header {
-  background-color: #7C0202;
+  /*background-color: #7C0202;*/
   color: white;
   text-align: center;
+  font-size: 20px;
+  font-family: ;
   padding: 5px;
   width: 97%;
+  height: 100%;
 }
 
 
