@@ -28,6 +28,7 @@ helpers do
 
   def session_authenticate email, password
     candidate = User.find_by(:email => email)
+
     unless candidate.blank?
 
       if candidate.password_hash.blank?

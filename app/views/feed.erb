@@ -1,37 +1,6 @@
+<div id="feed_header">
 
-<style>
-   #nav {
-      margin-left:4%;
-      margin-top: 3%;
-      width: 30%;
-      float: left;
-      height: 1000px;
-      color: white;
-    }
-    #feed {
-      margin-top: 4%;
-      width: 60%;
-      margin-left: -50px;
-    }
 
-    body {
-      background:black;
-    }
-
-    h1 {
-      color: white;
-    }
-
-    h2 {
-      color: black;
-    }
-    a {
-      color:white;
-    }
-    #footer {
-      padding: 5%;
-    }
-</style>
 
 <div id="header">
 <h1>Holler Back, Y'all!</h1>
@@ -50,21 +19,34 @@ FOLLOWERS COUNT<br>
 </div>
 
 <div id="nav">
-<p><a href="/user/<%=@user.id%>">Full name: <%=@user.full_name%></a><br>
-<p>User Handle: <%=@user.user_handle%></p><br>
+  <p><a href="/user/<%=@user.id%>">Full name: <%=@user.full_name%></a><br>
+  <p>User Handle: <%=@user.user_handle%></p><br>
 
-<p>Followers: <%=@user.follows.where( follower_id: @user.id).count%></p><br>
-<p>Following: <%=@user.follows.where( followed_id: @user.id).count%></p><br>
+  <p>Followers: <%=@user.follows.where( follower_id: @user.id).count%></p><br>
+  <p>Following: <%=@user.follows.where( followed_id: @user.id).count%></p><br>
 </div>
 
-<<<<<<< HEAD
 <div id="feed">
-<h2>Hollers From Your Herd and Kin!</h2>
-<section>
-  <p><%@user.each {}
-=======
->>>>>>> a5cfdc216bcb03abd3f34e9d73d7e216f97f9f68
-
+  <div id="holler">
+<table id ="holler_table">
+    <%@hollers.each do |holler|%>
+  <tr>
+    <td><%=holler.user.user_handle%></td>
+    <td></td>
+    <td><%=holler.created_at@%></td>
+  </tr>
+  <tr style="text-align: center">
+    <td><%=holler.created_at@%>
+</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td><form action="/reholler" method="post">
+    <input type="reholler" value="Reholler"/></td>
+  </tr>
+</table>
+</div>
 </div>
 
 <div id="footer">
