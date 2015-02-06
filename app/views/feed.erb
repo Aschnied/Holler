@@ -1,0 +1,60 @@
+
+<style>
+   #nav {
+      margin-left:4%;
+      margin-top: 3%;
+      width: 30%;
+      float: left;
+      height: 1000px;
+      color: white;
+    }
+    #feed {
+      margin-top: 4%;
+      width: 60%;
+      margin-left: -50px;
+    }
+
+    body {
+      background:black;
+    }
+
+    h1 {
+      color: white;
+    }
+
+    h2 {
+      color: black;
+    }
+    a {
+      color:white;
+    }
+    #footer {
+      padding: 5%;
+    }
+</style>
+
+<div id="header">
+<h1>Welcome <%=@user.full_name%> </h1>
+<nav>
+</div>
+
+<div id="nav">
+<p><a href="/user/<%=@user.id%>">Full name: <%=@user.full_name%></a><br>
+<p>User Handle: <%=@user.user_handle%></p><br>
+
+<p>Followers: <%=@user.follows.where( follower_id: @user.id).count%></p><br>
+<p>Following: <%=@user.follows.where( followed_id: @user.id).count%></p><br>
+</div>
+
+<div id="feed">
+<h2>Hollers From Your Herd and Kin!</h2>
+<section>
+  <p><%@user.each {}
+
+</div>
+
+<div id="footer">
+Copyright © Aunt Sharlene's Squirrel Bucket, LLC.
+</div>
+
+

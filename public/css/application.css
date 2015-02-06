@@ -1,0 +1,36 @@
+#header {
+  background-color: #7C0202;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  width: 97%;
+}
+
+input {
+  color: black;
+}
+
+#feed {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:62%;
+    float:left;
+    padding:5px;
+    text-align: center;
+}
+
+#nav {
+  background-color: DD5151;
+  float: left;
+  width: 35%;
+}
+
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;
+    width: 97%;
+}
