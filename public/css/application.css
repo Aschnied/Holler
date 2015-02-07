@@ -13,6 +13,18 @@ h1 {
   color: black;
 }
 
+#header h1 {
+  color: #FF6600;
+}
+
+#header a {
+  background: white;
+}
+
+#bg_left {
+    background-image: url("http://www.perceptivetravel.com/issues/0313/photos/moonshine-cabin-500.jpg");
+}
+
 .submit {
   color: #375d81;
   font-size: 20px;
@@ -23,8 +35,10 @@ h1 {
 
 #feed_header {
   background-color: #7C0202;
-  background-image: url("http://www.perceptivetravel.com/issues/0313/photos/moonshine-cabin-500.jpg");
+  background-image: url("http://images.birthdayexpress.com/mgen/64954.jpg");
   height: 100%;
+filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#7F00FF00', EndColorStr='#7F00FF00');
+
 }
 
 #header {
@@ -47,7 +61,7 @@ input {
     line-height:30px;
     /*background-color:#eeeeee;*/
     height:300px;
-    width:62%;
+    width:55%;
     float:left;
     padding:5px;
     text-align: center;
@@ -87,6 +101,8 @@ input {
   -webkit-border-radius: 10px;
   padding: 10px;
   padding-right: 30px;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 #footer {
@@ -104,24 +120,49 @@ input {
   border: 1px solid #d0d0d0;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
+  padding-right: 40px;
 }
 
 .handle {
   display: inline-block;
-  float: left;
+  float: left !important;
+}
+
+li#handle {
+display: inline-block;
+float: left !important;
+margin-top: -50px;
+}
+
+.feed_time {
+  margin-top: -17px;
 }
 
 .time, .reholler {
   display: inline-block;
   float: right;
   padding-right: 10px;
-}
+/*  margin-top: -17px;
+*/}
 
-.reholler {
+.rehol {
   border: 1px solid black;
   color: white;
   background: black;
-  padding: 2px;
   border-radius: 10px;
   cursor: pointer;
 }
+.reholler {
+  padding: 2px;
+  margin-top: -27px;
+}
+
+.follow {
+   padding-left: 2px;
+   width: 10%;
+ }
+
+ .chase {
+  margin-top: -51px;
+  margin-left: -5px;
+ }
