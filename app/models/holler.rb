@@ -1,4 +1,4 @@
-class Holler < ActiveRecord::Base
+  `````````````````````````````````````````````````````   1````````````` 1class Holler < ActiveRecord::Base
 
   belongs_to :user
 
