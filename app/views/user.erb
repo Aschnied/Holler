@@ -1,1 +1,84 @@
+<div id="feed_header">
+<div id="header">
+<h1>Holler Back, Y'all!</h1>
+<h2>Welcome, <%=@original_user.full_name%>! </h2>
+
+<p><a href='/home'>Home</a></p>
+
+<p><a href='/log_out'>Log Out</a></p>
+</div>
+<!--
+<style>
+   #nav {
+      margin-left:4%;
+      margin-top: 3%;
+      width: 30%;
+      float: left;
+      height: 1000px;
+      color: white;
+    }
+    #feed {
+      margin-top: 4%;
+      width: 60%;
+      margin-left: -50px;
+    }
+
+    body {
+      background:black;
+    }
+
+    h1 {
+      color: white;
+    }
+
+    h2 {
+      color: black;
+    }
+    a {
+      color:white;
+    }
+    #footer {
+      padding: 5%;
+    }
+</style>
+-->
+
+
+<div id="nav">
+  <p><%=@user.full_name%><br>
+  <p><a href="/user/<%=@user.user_handle%>"><%=@user.user_handle%></a></p>
+  <p><a href="/follow/<%=@user.user_handle%>">Follow</a></p></p>
+  <p>Followers: <%=@user.follows.where( follower_id: @user.id).count%></p>
+  <p>Following: <%=@user.follows.where( followed_id: @user.id).count%></p>
+</div>
+
+<nav>
+</div>
+
+
+
+<div id="feed">
+  <!-- <div id="holler"> -->
+
+    <%@user.hollers.reverse_each do |holler|%>
+  <ul class="holler_content">
+    <li class="handle"><a href="/user/<%=@user.user_handle%>"><%=holler.user.user_handle%></a></li>
+    <li class="time"><%=holler.created_at.strftime("%B %d, %Y, %l:%M")%>
+    </li>
+    <li class="content"><br/><%=holler.content.upcase%></li>
+    <li class=" rehol reholler">Reholler</li><br>
+  </ul>
+<%end%>
+</div>
+
+<form action="/holler" method="post">
+    <textarea class="textarea" name="tweet" placeholder="Add holler here"></textarea>
+    <input class = "submit holer" type="submit" value="Holler">
+</form>
+</div>
+<!--
+<div id="footer">
+Copyright © Aunt Sharlene's Squirrel Bucket, LLC.
+</div> -->
+
 
